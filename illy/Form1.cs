@@ -22,7 +22,7 @@ namespace illy
         private string connectionString =
             "Server=localhost\\SQLEXPRESS;Database=Projekti;Integrated Security=True;MultipleActiveResultSets=True;";
         private const int MaxLoginAttempts = 3;
-        private const string VPN_API_KEY = "4851768c313b43899f260e4fe9fa9c1e";
+        private const string VPN_API_KEY = "";
         private static readonly HttpClient client = new HttpClient();
         private bool isDragging = false;
         private Point dragStartPoint;
