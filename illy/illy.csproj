@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E50344B-2149-4EB0-829A-CD5664668215}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>illy</RootNamespace>
+    <AssemblyName>illy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.69.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.69.0\lib\net462\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.69.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.69.0\lib\net462\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.69.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.69.0\lib\net462\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Oauth2.v2, Version=1.68.0.1869, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Oauth2.v2.1.68.0.1869\lib\net462\Google.Apis.Oauth2.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.9.0.3\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="adminBallinaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminBallinaForm.Designer.cs">
+      <DependentUpon>adminBallinaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminEProfesori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminEProfesori.Designer.cs">
+      <DependentUpon>adminEProfesori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminFinancat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminFinancat.Designer.cs">
+      <DependentUpon>adminFinancat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLendetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLendetForm.Designer.cs">
+      <DependentUpon>AdminLendetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminOrari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminOrari.Designer.cs">
+      <DependentUpon>AdminOrari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminShtoNdryshoOrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminShtoNdryshoOrar.Designer.cs">
+      <DependentUpon>AdminShtoNdryshoOrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminStudenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminStudenti.Designer.cs">
+      <DependentUpon>adminStudenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BallinaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BallinaForm.Designer.cs">
+      <DependentUpon>BallinaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="caktoProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caktoProfessor.Designer.cs">
+      <DependentUpon>caktoProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetyratList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetyratList.Designer.cs">
+      <DependentUpon>DetyratList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="E-Profesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="E-Profesor.Designer.cs">
+      <DependentUpon>E-Profesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estudenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estudenti.Designer.cs">
+      <DependentUpon>Estudenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinancatForm.Designer.cs">
+      <DependentUpon>FinancatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KryefaqjaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KryefaqjaForm.Designer.cs">
+      <DependentUpon>KryefaqjaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LendetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LendetForm.Designer.cs">
+      <DependentUpon>LendetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialetListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialetListForm.Designer.cs">
+      <DependentUpon>MaterialetListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NdrroTelefoninProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NdrroTelefoninProf.Designer.cs">
+      <DependentUpon>NdrroTelefoninProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notat.Designer.cs">
+      <DependentUpon>Notat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyHelper.cs" />
+    <Compile Include="OrariForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrariForm.Designer.cs">
+      <DependentUpon>OrariForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerkrahjaTeknike.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerkrahjaTeknike.Designer.cs">
+      <DependentUpon>PerkrahjaTeknike.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfessorDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfessorDashboard.Designer.cs">
+      <DependentUpon>ProfessorDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfiliIm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfiliIm.Designer.cs">
+      <DependentUpon>ProfiliIm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProvimetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProvimetForm.Designer.cs">
+      <DependentUpon>ProvimetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProvimetProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProvimetProfessor.Designer.cs">
+      <DependentUpon>ProvimetProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublikoNjoftime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublikoNjoftime.Designer.cs">
+      <DependentUpon>PublikoNjoftime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReferentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReferentForm.Designer.cs">
+      <DependentUpon>ReferentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RezultatetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RezultatetForm.Designer.cs">
+      <DependentUpon>RezultatetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShtoPerditsoLende.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShtoPerditsoLende.Designer.cs">
+      <DependentUpon>ShtoPerditsoLende.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatistikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatistikaForm.Designer.cs">
+      <DependentUpon>StatistikaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShtoMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShtoMaterialForm.Designer.cs">
+      <DependentUpon>ShtoMaterialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShtoNoten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShtoNoten.Designer.cs">
+      <DependentUpon>ShtoNoten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShtoProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShtoProfessor.Designer.cs">
+      <DependentUpon>ShtoProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="shtoStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="shtoStudent.Designer.cs">
+      <DependentUpon>shtoStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShtoWhiteListed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShtoWhiteListed.Designer.cs">
+      <DependentUpon>ShtoWhiteListed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TranskriptaNotave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TranskriptaNotave.Designer.cs">
+      <DependentUpon>TranskriptaNotave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vendosFjalekalimTeRi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vendosFjalekalimTeRi.Designer.cs">
+      <DependentUpon>vendosFjalekalimTeRi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VleresoStudentin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VleresoStudentin.Designer.cs">
+      <DependentUpon>VleresoStudentin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xhirollogarite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Xhirollogarite.Designer.cs">
+      <DependentUpon>Xhirollogarite.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="adminBallinaForm.resx">
+      <DependentUpon>adminBallinaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminEProfesori.resx">
+      <DependentUpon>adminEProfesori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminFinancat.resx">
+      <DependentUpon>adminFinancat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLendetForm.resx">
+      <DependentUpon>AdminLendetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminOrari.resx">
+      <DependentUpon>AdminOrari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminShtoNdryshoOrar.resx">
+      <DependentUpon>AdminShtoNdryshoOrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminStudenti.resx">
+      <DependentUpon>adminStudenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BallinaForm.resx">
+      <DependentUpon>BallinaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caktoProfessor.resx">
+      <DependentUpon>caktoProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetyratList.resx">
+      <DependentUpon>DetyratList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="E-Profesor.resx">
+      <DependentUpon>E-Profesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estudenti.resx">
+      <DependentUpon>Estudenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancatForm.resx">
+      <DependentUpon>FinancatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KryefaqjaForm.resx">
+      <DependentUpon>KryefaqjaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LendetForm.resx">
+      <DependentUpon>LendetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialetListForm.resx">
+      <DependentUpon>MaterialetListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NdrroTelefoninProf.resx">
+      <DependentUpon>NdrroTelefoninProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notat.resx">
+      <DependentUpon>Notat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrariForm.resx">
+      <DependentUpon>OrariForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerkrahjaTeknike.resx">
+      <DependentUpon>PerkrahjaTeknike.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfessorDashboard.resx">
+      <DependentUpon>ProfessorDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfiliIm.resx">
+      <DependentUpon>ProfiliIm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProvimetForm.resx">
+      <DependentUpon>ProvimetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProvimetProfessor.resx">
+      <DependentUpon>ProvimetProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublikoNjoftime.resx">
+      <DependentUpon>PublikoNjoftime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReferentForm.resx">
+      <DependentUpon>ReferentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RezultatetForm.resx">
+      <DependentUpon>RezultatetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShtoPerditsoLende.resx">
+      <DependentUpon>ShtoPerditsoLende.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatistikaForm.resx">
+      <DependentUpon>StatistikaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShtoMaterialForm.resx">
+      <DependentUpon>ShtoMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShtoNoten.resx">
+      <DependentUpon>ShtoNoten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShtoProfessor.resx">
+      <DependentUpon>ShtoProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shtoStudent.resx">
+      <DependentUpon>shtoStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShtoWhiteListed.resx">
+      <DependentUpon>ShtoWhiteListed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TranskriptaNotave.resx">
+      <DependentUpon>TranskriptaNotave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vendosFjalekalimTeRi.resx">
+      <DependentUpon>vendosFjalekalimTeRi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VleresoStudentin.resx">
+      <DependentUpon>VleresoStudentin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xhirollogarite.resx">
+      <DependentUpon>Xhirollogarite.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
