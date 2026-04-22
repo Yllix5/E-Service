@@ -22,7 +22,7 @@ namespace illy
         private string connectionString =
             "Server=localhost\\SQLEXPRESS;Database=Projekti;Integrated Security=True;MultipleActiveResultSets=True;";
         private const int MaxLoginAttempts = 3;
-        private const string VPN_API_KEY = "";
+        private const string VPN_API_KEY = ""; // Shto VPN API KEY KETU!!!
         private static readonly HttpClient client = new HttpClient();
         private bool isDragging = false;
         private Point dragStartPoint;
@@ -341,8 +341,8 @@ namespace illy
                 try
                 {
                     string[] scopes = { "https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile" };
-                    string clientId = "70572351766-7bvkgf6r8a6061de4faqleanffdbaahq.apps.googleusercontent.com";
-                    string clientSecret = "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";
+                    string clientId = ""; // Gjenero google clientID...
+                    string clientSecret = ""; // Gjenero clientSecret ...
                     var fileDataStore = new FileDataStore(Guid.NewGuid().ToString(), true);
 
                     var credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
