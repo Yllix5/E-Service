@@ -286,7 +286,7 @@ namespace illy
 
         private async void googlePicture_Click(object sender, EventArgs e)
         {
-            // Mund të shtosh të njëjtën logjikë edhe këtu nëse ka problem të ngjashëm
+            
             googlePicture.Enabled = false;
 
             try
