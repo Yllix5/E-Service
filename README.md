@@ -55,7 +55,7 @@ The system is designed with a focus on security, automation, and stability in an
 
 ## 🧰 Tech Stack
 
-- .NET Framework (Windows Application) 4.7.2 version framework compatibile with visual studio 19,22 and so on.
+- .NET Framework (Windows Application)
 - SQL Server (SSMS) ssms 19 version
 - Go (supporting modules / utilities)
 - Newtonsoft.Json (API handling)
